@@ -1,13 +1,13 @@
 # coding: utf-8
 #
-
+from __future__ import absolute_import
 
 try:
     # Python 3
     from urllib import parse as _urlparser
 except ImportError:
     # Python 2
-    import urllib.parse as _urlparser
+    import urlparse as _urlparser
 
 
 #
@@ -27,7 +27,7 @@ def uri_query_to_args(query, flatten=False):
     # If flatten is True
     if flatten:
         # For each key
-        for key in list(args_dict.keys()):
+        for key in args_dict.keys():
             # Use the first value in the value list as the flat value
             args_dict[key] = args_dict[key][0]
 
